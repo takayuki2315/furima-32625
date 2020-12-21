@@ -2,16 +2,15 @@
 
 ##users テーブル
 
-| Column          | Type   | Option                    |
-| --------------- | -----  | ------------------------- | 
-| email           | string | null: false, unique: true |
-| password        | string | null: false               |
-| nickname        | string | null: false               |
-| first_name      | string | null: false               |
-| last_name       | string | null: false               |
-| first_name_kana | string | null: false               |
-| last_name_kana  | string | null: false               |
-| birth_date      | date   | null: false               |
+| Column             | Type   | Option                    |
+| ------------------ | -----  | ------------------------- | 
+| encrypted_password | string | null: false               |
+| nickname           | string | null: false               |
+| first_name         | string | null: false               |
+| last_name          | string | null: false               |
+| first_name_kana    | string | null: false               |
+| last_name_kana     | string | null: false               |
+| birth_date         | date   | null: false               |
 
 ### Association
 
@@ -64,7 +63,7 @@
 | city          | string     | null: false                    |
 | address       | string     | null: false                    |
 | apartment     | string     |                                |
-| phone_number  | integer    | null: false                    |
+| phone_number  | string     | null: false                    |
 
 ### Association
 
