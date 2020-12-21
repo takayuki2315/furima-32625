@@ -5,7 +5,6 @@
 | Column             | Type   | Option                    |
 | ------------------ | -----  | ------------------------- | 
 | email              | string | null: false, unique: true |
-| password           | string | null: false               |
 | encrypted_password | string | null: false               |
 | nickname           | string | null: false               |
 | first_name         | string | null: false               |
@@ -53,14 +52,15 @@
 
 ## addresses テーブル
 
-| Column        | Type       | Option                         |
-| ------------- | ---------- | ------------------------------ |
-| postal_code   | string     | null: false                    |
-| prefecture_id | integer    | null: false                    |
-| city          | string     | null: false                    |
-| address       | string     | null: false                    |
-| apartment     | string     |                                |
-| phone_number  | string     | null: false                    |
+| Column          | Type       | Option                         |
+| --------------- | ---------- | ------------------------------ |
+| postal_code     | string     | null: false                    |
+| prefecture_id   | integer    | null: false                    |
+| city            | string     | null: false                    |
+| address         | string     | null: false                    |
+| apartment       | string     |                                |
+| phone_number    | string     | null: false                    |
+| purchase_record | references | null: false, foreign_key: true |
 
 ### Association
 
