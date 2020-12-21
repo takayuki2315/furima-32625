@@ -4,6 +4,8 @@
 
 | Column             | Type   | Option                    |
 | ------------------ | -----  | ------------------------- | 
+| email              | string | null: false, unique: true |
+| password           | string | null: false               |
 | encrypted_password | string | null: false               |
 | nickname           | string | null: false               |
 | first_name         | string | null: false               |
@@ -19,26 +21,21 @@
 
 ## itmes テーブル
 
-| Column             | Type       | Option                         |
-| ------------------ | ---------- | ------------------------------ |
-| name               | string     | null: false                    |
-| text               | text       | null: false                    |
-| category_id        | integer    | null: false                    |
-| condition_id       | integer    | null: false                    |
-| delivery_fee_id    | integer    | null: false                    |
-| prefecture_id      | integer    | null: false                    |
-| day_to_delivery_id | integer    | null: false                    |
-| price              | integer    | null: false                    |
-| user               | references | null: false, foreign_key: true |
+| Column              | Type       | Option                         |
+| ------------------  | ---------- | ------------------------------ |
+| name                | string     | null: false                    |
+| text                | text       | null: false                    |
+| category_id         | integer    | null: false                    |
+| condition_id        | integer    | null: false                    |
+| delivery_fee_id     | integer    | null: false                    |
+| prefecture_id       | integer    | null: false                    |
+| days_to_delivery_id | integer    | null: false                    |
+| price               | integer    | null: false                    |
+| user                | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
-- belongs_to :category_id
-- belongs_to :condition_id
-- belongs_to :delivery_fee_id
-- belongs_to :prefecture_id
-- belongs_to :day_to_delivery_id
 - has_one :order
 
 ## orders テーブル
@@ -68,4 +65,3 @@
 ### Association
 
 - belongs_to :order
-- belongs_to: prefecture_id
