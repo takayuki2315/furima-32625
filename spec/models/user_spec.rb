@@ -6,10 +6,13 @@ RSpec.describe User, type: :model do
       @user = FactoryBot.build(:user)
     end
 
-    describe 'ユーザー新規登録' do
+    context '内容に問題がない場合' do
       it 'ニックネーム、メールアドレス、パスワード、名字、名前、フリガナ、生年月日が必須である' do
         expect(@user).to be_valid
       end
+    end
+
+    context '内容に問題がある場合' do
       it 'ニックネームが空だと登録できない' do
         @user.nickname = ''
         @user.valid?
