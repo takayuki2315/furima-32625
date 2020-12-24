@@ -17,6 +17,6 @@ class Item < ApplicationRecord
     validates :condition_id, numericality: { other_than: 1 }
     validates :delivery_fee_id, numericality: { other_than: 1 }
     validates :prefecture_id, numericality: { other_than: 0 }
-    validates :days_to_dalivery_id, numericality: { other_than: 1 }
+    validates :days_to_delivery_id, numericality: { other_than: 1 }
   end
 end
