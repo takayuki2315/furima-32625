@@ -10,15 +10,9 @@ class Item < ApplicationRecord
   has_one_attached :image
 
   with_options presence: true do
-    validates :image
-    validates :name
-    validates :text
+    validates :image, :name, :text
     validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: "is out of setting range" }
-    validates :category_id, numericality: { other_than: 0 }
-    validates :condition_id, numericality: { other_than: 0 }
-    validates :delivery_fee_id, numericality: { other_than: 0 }
-    validates :prefecture_id, numericality: { other_than: 0 }
-    validates :days_to_delivery_id, numericality: { other_than: 0 }
+    validates :category_id, :condition_id, :delivery_fee_id, :prefecture_id, :days_to_delivery_id, numericality: { other_than: 0 }
   end
   
 
