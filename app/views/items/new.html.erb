@@ -8,8 +8,7 @@
     <%= form_with model: @item, url: items_path, local: true do |f| %>
 
     
-    <%= render partial: 'shared/error_messages', locals: {model: f.object} %>
-    
+    <%= render partial: 'shared/error_messages', locals: { model: f.object } %>
 
     
     <div class="img-upload">
@@ -24,7 +23,6 @@
         <%= f.file_field :image, id:"item-image" %>
       </div>
     </div>
-    
     
     <div class="new-items">
       <div class="weight-bold-text">
