@@ -11,6 +11,11 @@ RSpec.describe UserOrder, type: :model do
       it '必要な全ての項目の入力ができていれば保存できる' do
         expect(@user_order).to be_valid
       end
+
+      it '建物名の入力がなくても保存できる' do
+        @user_order.apartment = ""
+        expect(@user_order).to be_valid
+      end
     end
 
     context '配送先の情報が保存でいない場合' do
