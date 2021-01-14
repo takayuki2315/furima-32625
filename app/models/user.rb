@@ -9,12 +9,12 @@ class User < ApplicationRecord
   NAME_KANA_REGEX = /\A[ァ-ン]+\z/.freeze
 
   with_options presence: true do
-    validates_format_of :password, with: PASSWORD_REGEX, messages: 'Password Include both letters and numbers',
+    validates_format_of :password, with: PASSWORD_REGEX, messages: 'パスワードは6文字以上で半角英字、半角数字の両方含めてください',
                                   length: { minimum: 6 }
-    validates :first_name, format: { with: NAME_REGEX, message: 'First name Full-width characters' }
-    validates :last_name, format: { with: NAME_REGEX, message: 'Last name Full-width characters' }
-    validates :first_name_kana, format: { with: NAME_KANA_REGEX, message: 'First name kana Full-width katakana characters' }
-    validates :last_name_kana, format: { with: NAME_KANA_REGEX, message: 'Last name kana Full-width katakana characters' }
+    validates :first_name, format: { with: NAME_REGEX, message: 'は全角（漢字・ひらがな・カタカナ）で入力してください' }
+    validates :last_name, format: { with: NAME_REGEX, message: 'は全角（漢字・ひらがな・カタカナ）で入力してください' }
+    validates :first_name_kana, format: { with: NAME_KANA_REGEX, message: 'は全角（カタカナ）で入力してください' }
+    validates :last_name_kana, format: { with: NAME_KANA_REGEX, message: 'は全角（カタカナ）で入力してください' }
     validates :birth_date
     validates :nickname
   end
